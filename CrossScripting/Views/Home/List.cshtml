@@ -1,0 +1,21 @@
+﻿@{
+    ViewBag.Title = "List";
+}
+
+<h2>Produtos</h2>
+
+@if (ViewBag.Produtos != null)
+{
+    foreach (var item in ViewBag.Produtos)
+    {
+        <h3>
+            @item.Nome
+        </h3>
+        <p>
+            @Html.Raw(item.Descricao)
+        </p>
+        <p>
+            <a href="~/Home/Edit/@item.Id">Editar</a>
+        </p>
+    }
+}
